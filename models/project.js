@@ -21,6 +21,10 @@ const projectSchema = new mongoose.Schema({
     type: String,
     enum: ['hosted', 'finished' , 'in progress' , 'outdated']
   },
+  author: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }
 });
 
 const Project = mongoose.model('Project', projectSchema);
